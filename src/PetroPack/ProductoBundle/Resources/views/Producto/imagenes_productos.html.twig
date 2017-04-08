@@ -1,0 +1,36 @@
+<table class="table table-bordered table-stripped">
+    <thead>
+    <tr>
+        <th>
+            Vistam Imagen
+        </th>
+        <th>
+            Url Imagen
+        </th>
+        <th>
+            Orden
+        </th>
+        <th>
+            Acciones
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for imagen in imagenes %}
+        <tr>
+            <td width="20%">
+                <img width="150" height="150" src="{{ imagen.url }}">
+            </td>
+            <td width="60%">
+                <input type="text" class="form-control" disabled value="{{ imagen.url }}">
+            </td>
+            <td width="10%" id="{{ imagen.id }}">
+                <input type="text" class="form-control orden_img" value="{{ imagen.orden }}">
+            </td>
+            <td width="20%" id="{{ imagen.id }}">
+                <button onclick="javascript:remove_image('{{ imagen.id }}')" class="btn btn-white remove_img"><i class="fa fa-trash"></i> </button>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,10 @@
+.red {
+    background: red;
+}
+:fullscreen a.css {
+    color: blue;
+}
+
+.cat {
+    background: url("~@MabaWebpackTestBundle/Resources/assets/cat.png")
+}

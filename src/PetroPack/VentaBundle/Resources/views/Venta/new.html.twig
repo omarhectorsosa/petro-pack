@@ -1,0 +1,170 @@
+{% extends "::backend/page/dashboard_2_col.html.twig" %}
+
+{% block titulo_form %} Agregar venta {% endblock %}
+{% block title_row_1 %} Generar venta {% endblock %}
+{% block title_row_2 %} Item de ventas {% endblock %}
+
+{% block header %} {{ render(controller('PetroPackMenuBundle:Menu:items')) }} {% endblock %}
+
+{% block content %}
+    <form role="form">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Cliente</label>
+            <select id="cliente_select" class="form-control select2" style="width: 100%;">
+                {% for cliente in clientes %}
+                    <option value="{{ cliente.id }}">{{ cliente.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- /.form-group -->
+        <div class="form-group">
+            <label>Producto</label>
+            <select id="producto_select" class="form-control select2" style="width: 100%;">
+                {% for producto in productos %}
+                    <option value="{{ producto.id }}">{{ producto.descripcion }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <!-- /.form-group -->
+        <div class="box-footer">
+            <button id="add_item"  type="button" class="btn btn-primary">Agregar</button>
+            <button id="save_venta" type="button" class="btn btn-primary">Guardar</button>
+            <button id="cancel_item" type="button" class="btn btn-primary">Cancelar</button>
+            <button id="print_item" type="button" class="btn btn-primary">Imprimir</button>
+        </div>
+    </div>
+    <!-- /.col -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Cantidad</label>
+            <input id="cantidad" type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+            <label>Descuento</label>
+            <select id="descuento" class="form-control select2" style="width: 100%;">
+                <option selected value=""></option>
+                <option value="5">5%</option>
+                <option value="10">10%</option>
+                <option value="15">15%</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input id="id_venta" value="0" type="hidden" class="form-control">
+        </div>
+        <div class="box-footer">
+        </div>
+        <!-- /.form-group -->
+    </div>
+    </form>
+    <!-- /.col -->
+{% endblock %}
+
+{% block content_right %}
+    <form role="form">
+        <div class="form-group">
+        <label>Cliente</label>
+        <select id="cliente_select" class="form-control select2" style="width: 100%;">
+            {% for cliente in clientes %}
+                <option value="{{ cliente.id }}">{{ cliente.nombre }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <!-- /.form-group -->
+        <div class="form-group">
+        <label>Producto</label>
+        <select id="producto_select" class="form-control select2" style="width: 100%;">
+            {% for producto in productos %}
+                <option value="{{ producto.id }}">{{ producto.descripcion }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <!-- /.form-group -->
+        <!-- /.col -->
+        <div class="form-group">
+        <label>Cantidad</label>
+        <input id="cantidad" type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+        <label>Descuento</label>
+        <select id="descuento" class="form-control select2" style="width: 100%;">
+            <option selected value=""></option>
+            <option value="5">5%</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <input id="id_venta" value="0" type="hidden" class="form-control">
+        </div>
+        <div class="box-footer">
+        </div>
+        <!-- /.form-group -->
+        <div class="box-footer text-center">
+            <button id="add_item"  type="button" class="btn btn-primary">Agregar</button>
+            <button id="save_venta" type="button" class="btn btn-primary">Guardar</button>
+            <button id="cancel_item" type="button" class="btn btn-primary">Cancelar</button>
+        </div>
+    </form>
+    <!-- /.col -->
+{% endblock %}
+
+{% block titulo_venta %} Venta {% endblock %}
+{% block venta %}
+<div class="box-body table-responsive no-padding">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Text Disabled</label>
+            <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+        </div>
+        <div class="form-group">
+            <label>Text Disabled</label>
+            <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Text Disabled</label>
+            <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+        </div>
+    </div>
+    <input value="1" id="id_venta" name="id_venta" type="hidden" ></input>
+</div>
+{% endblock %}
+
+{% block content_left %}
+    <!-- /.box-header -->
+    <div id="items_table" class="table-responsive no-padding">
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">PDF</button>
+            <button class="btn btn-primary" type="submit">Excel</button>
+        </div>
+        <table class="table">
+        <tbody><tr>
+            <th>Codigo</th>
+            <th>Cantidad</th>
+            <th>Descripcion</th>
+            <th>Presentacion</th>
+            <th>Precio Unidad</th>
+            <th>Precio Final</th>
+            <th>Descuento</th>
+            <th>Acciones</th>
+        </tr>
+        </tbody></table>
+</div>
+<!-- /.box-body -->
+{% endblock %}
+
+{% block modal %}
+<div class="modal inmodal" id="modalItem" tabindex="-1" role="dialog" aria-hidden="true">
+    {{ render(controller('PetroPackVentaBundle:Venta:itemForm')) }}
+</div>
+<div class="modal inmodal" id="modalItem2" tabindex="-1" role="dialog" aria-hidden="true">
+    {{ render(controller('PetroPackVentaBundle:Venta:itemFormRemove')) }}
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/backend/js/venta.js"></script>
+{% endblock %}
+

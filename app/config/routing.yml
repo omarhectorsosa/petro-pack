@@ -1,0 +1,55 @@
+petro_pack_paginado:
+    resource: "@PetroPackPaginadoBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+petro_pack_front_paginado:
+    resource: "@PetroPackFrontPaginadoBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+petro_pack_front_producto:
+    resource: "@PetroPackFrontProductoBundle/Controller/"
+    type:     annotation
+    prefix:   /frontend
+
+petro_pack_front_menu:
+    resource: "@PetroPackFrontMenuBundle/Controller/"
+    type:     annotation
+    prefix:   /frontend
+
+petro_pack_front_login:
+    resource: "@PetroPackFrontLoginBundle/Controller/"
+    type:     annotation
+    prefix:   /frontend
+
+petro_pack_menu:
+    resource: "@PetroPackMenuBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+petro_pack_venta:
+    resource: "@PetroPackVentaBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+petro_pack_cliente:
+    resource: "@PetroPackClienteBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+petro_pack_login:
+    resource: "@PetroPackLoginBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+petro_pack_producto:
+    resource: "@PetroPackProductoBundle/Controller/"
+    type:     annotation
+    prefix:   /backend
+
+
+
+
+
+

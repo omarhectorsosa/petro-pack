@@ -1,0 +1,35 @@
+<td colspan="8" class="footable-visible">
+    <ul class="pagination pull-right">
+        <li class="footable-page-arrow {{ disabled_prev }}"><a data-page="first" href="javascript:first()">«</a></li>
+        <li class="footable-page-arrow {{ disabled_prev }}"><a data-page="prev" href="javascript:grupo('{{ nombre_clase }}',{{ prev }})">‹</a></li>
+        {% for pagina in paginas %}
+            <li class="footable-page active">
+                <a data-page="0" href="/backend/producto/list/page/{{ pagina }}">{{ pagina }}
+                </a></li>
+        {% endfor %}
+        <li class="footable-page-arrow"><a data-page="next" href="javascript:grupo('{{ nombre_clase }}',{{ next }})">›</a></li>
+        <li class="footable-page-arrow"><a data-page="last" href="javascript:last()">»</a></li>
+    </ul>
+</td>
+<script>
+    function grupo(nombre_clase,section) {
+
+        var data =	new FormData();
+        data.append('section',section);
+
+        $.ajax({
+            url:'/backend/paginado/class/'+nombre_clase+'/section/'+section,
+            type:'POST',
+            data:data,
+            contentType:false,
+            dataType:'json',
+            processData:false,
+            beforeSend: function() {
+            },
+            cache:false,
+            success:function(result){
+                $("#paginado").html(result.paginas)
+            }
+        });
+    }
+</script>

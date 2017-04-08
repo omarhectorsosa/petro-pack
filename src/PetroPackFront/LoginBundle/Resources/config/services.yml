@@ -1,0 +1,4 @@
+services:
+#    petro_pack_front_login.example:
+#        class: PetroPackFront\LoginBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

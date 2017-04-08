@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="PetroPack\VentaBundle\Repository\ItemVentaRepository" name="PetroPack\VentaBundle\Entity\ItemVenta">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="venta_id" type="integer" column="venta_id"/>
+    <field name="cantidad" type="integer" column="cantidad"/>
+    <field name="producto_id" type="integer" column="producto_id"/>
+    <field name="precio_final" type="float" column="precio_final"/>
+    <field name="descuento" type="integer" column="descuento"/>
+    <field name="create_at" type="datetime" column="create_at"/>
+    <field name="update_at" type="datetime" column="update_at"/>
+  </entity>
+</doctrine-mapping>

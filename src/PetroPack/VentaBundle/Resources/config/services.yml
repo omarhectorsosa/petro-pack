@@ -1,0 +1,4 @@
+services:
+#    petro_pack_venta.example:
+#        class: PetroPack\VentaBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

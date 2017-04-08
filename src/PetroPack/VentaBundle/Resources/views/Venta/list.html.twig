@@ -1,0 +1,33 @@
+{% extends "::backend/page/dashboard_4.html.twig" %}
+
+{% block titulo %}Petro Pack{% endblock %}
+{% block empresa %}Petro Pack{% endblock %}
+{% block modulo %}Venta{% endblock %}
+{% block desripcion %} Listado de venta {% endblock %}
+
+{% block header %} {{ render(controller('PetroPackMenuBundle:Menu:items')) }}{% endblock %}
+
+{% block content %}
+    <table id="venta_table" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Id</th>
+            <th>Cliente</th>
+            <th>Deuda</th>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th></th>
+            <th>Id</th>
+            <th>Cliente</th>
+            <th>Deuda</th>
+        </tr>
+        </tfoot>
+    </table>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/petro-pack/venta.js"></script>
+{% endblock %}

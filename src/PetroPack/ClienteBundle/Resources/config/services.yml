@@ -1,0 +1,4 @@
+services:
+#    petro_pack_cliente.example:
+#        class: PetroPack\ClienteBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

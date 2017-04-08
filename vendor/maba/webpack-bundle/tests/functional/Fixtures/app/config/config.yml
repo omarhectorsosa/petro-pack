@@ -1,0 +1,10 @@
+imports: [{resource: 'common.yml'}]
+
+maba_webpack:
+    enabled_bundles:
+        - MabaWebpackTestBundle
+    twig:
+        suppress_errors: false
+    config:
+        parameters:
+            extract_css: false

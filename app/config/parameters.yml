@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: petropack_prod
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: 28060033fa8e40afd47be71d4a4b3d9038709315
+    url_img  : http://localhost:8080/backend/img/upload/
+    path_img : C:\Proyectos\petro-pack\web\backend\img\upload\
+    cant_items_pagina : 10
+    grupo_pagina : 5

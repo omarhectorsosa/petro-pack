@@ -1,0 +1,33 @@
+<div class="form-group">
+    <button class="btn btn-primary" type="submit">PDF</button>
+    <button class="btn btn-primary" type="submit">Excel</button>
+</div>
+<table id="items_table" class="table table-hover">
+    <tbody><tr>
+        <th>Codigo</th>
+        <th>Cantidad</th>
+        <th>Descripcion</th>
+        <th>Presentacion</th>
+        <th>Precio Unidad</th>
+        <th>Precio Final</th>
+        <th>Descuento</th>
+        <th>Acciones</th>
+    </tr>
+    {% for item_venta in items_venta %}
+    <tr id="1">
+        <td>{{item_venta.cod_producto}}</td>
+        <td>{{item_venta.cantidad}}</td>
+        <td>{{item_venta.descripcion_producto}}</td>
+        <td>{{item_venta.presentacion_producto}}</td>
+        <td>{{item_venta.precio_unidad}}</td>
+        <td>{{item_venta.precio_final}}</td>
+        <td>{{item_venta.descuento}}%</td>
+        <td><a href="#" data-toggle="modal" data-target="#modalItem" class="label label-success" data-id="84">
+                <i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="#" data-toggle="modal" data-target="#modalItem2" class="label label-success" data-id="84">
+                <i class="fa fa-trash" aria-hidden="true"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
