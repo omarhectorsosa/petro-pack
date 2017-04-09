@@ -89,6 +89,20 @@ class Cliente
      */
     private $dni;
 
+    /**
+     * @var float
+     */
+    private $pago;
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
+
+    /**
+     * @var \DateTime
+     */
+    private $updated_at;
+
 
     /**
      * Set email
@@ -136,5 +150,29 @@ class Cliente
     public function getDni()
     {
         return $this->dni;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return DescuentoProducto
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
     }
 }
