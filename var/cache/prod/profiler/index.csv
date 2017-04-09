@@ -175,3 +175,5 @@ b86fbb,127.0.0.1,GET,http://localhost:8080/unify/HTML/E-commerce/assets/js/shop.
 8798bb,127.0.0.1,GET,http://localhost:8080/unify/HTML/E-commerce/assets/js/plugins/style-switcher.js,1491697196,6a3ecd,200
 6a3ecd,127.0.0.1,GET,http://localhost:8080/unify/HTML/E-commerce/assets/js/plugins/style-switcher.js,1491697196,,404
 4426b2,127.0.0.1,GET,http://localhost:8080/frontend/,1491697399,,200
+30bf71,127.0.0.1,GET,http://localhost:8080/frontend/,1491704265,,200
+9032b5,127.0.0.1,GET,http://localhost:8080/backend/,1491746944,,200

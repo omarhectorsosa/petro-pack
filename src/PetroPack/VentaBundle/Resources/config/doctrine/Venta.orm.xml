@@ -4,12 +4,17 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    <field name="cliente_id" type="integer" column="cliente_id"/>
-    <field name="fecha_venta" type="datetime" column="fecha_venta"/>
-    <field name="deuda" type="float" column="deuda"/>
-    <field name="importe" type="float" column="importe"/>
-    <field name="total" type="integer" column="total"/>
-    <field name="descuento" type="integer" column="descuento"/>
-    <field name="pago" type="float" column="pago"/>
+    <field name="cliente_id" type="integer" column="cliente_id" nullable="true"/>
+    <field name="fecha_venta" type="datetime" column="fecha_venta" nullable="true"/>
+    <field name="deuda" type="float" column="deuda" nullable="true"/>
+    <field name="importe" type="float" column="importe" nullable="true"/>
+    <field name="total" type="integer" column="total" nullable="true"/>
+    <field name="descuento" type="integer" column="descuento" nullable="true"/>
+    <field name="pago" type="float" column="pago" nullable="true"/>
+    <field name="created_at" type="datetime" column="created_at" nullable="true"/>
+    <options>
+      <option name="default">CURRENT_TIMESTAMP</option>
+    </options>
+    <field name="updated_at" type="datetime" column="updated_at" nullable="true"/>
   </entity>
 </doctrine-mapping>

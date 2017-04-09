@@ -4,12 +4,17 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    <field name="nombre" type="string" column="nombre" length="100"/>
-    <field name="descripcion" type="string" column="descripcion" length="100"/>
-    <field name="presentacion" type="string" column="presentacion" length="100"/>
-    <field name="precio_unidad" type="float" column="precio_unidad"/>
-    <field name="tipo" type="string" column="tipo" length="100"/>
-    <field name="cantidad" type="integer" column="cantidad"/>
-    <field name="cod_producto" type="string" column="cod_producto" length="20"/>
+    <field name="nombre" type="string" column="nombre" length="100" nullable="true"/>
+    <field name="descripcion" type="string" column="descripcion" length="100" nullable="true"/>
+    <field name="presentacion" type="string" column="presentacion" length="100" nullable="true"/>
+    <field name="precio_unidad" type="float" column="precio_unidad" nullable="true"/>
+    <field name="tipo" type="string" column="tipo" length="100" nullable="true"/>
+    <field name="cantidad" type="integer" column="cantidad" nullable="true"/>
+    <field name="cod_producto" type="string" column="cod_producto" length="20" nullable="true"/>
+    <field name="created_at" type="datetime" column="created_at" nullable="true"/>
+    <options>
+      <option name="default">CURRENT_TIMESTAMP</option>
+    </options>
+    <field name="updated_at" type="datetime" column="updated_at" nullable="true"/>
   </entity>
 </doctrine-mapping>

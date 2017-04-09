@@ -5,11 +5,14 @@
       <generator strategy="AUTO"/>
     </id>
     <field name="producto_id" type="integer" column="producto_id"/>
-    <field name="cantidad" type="integer" column="cantidad"/>
-    <field name="descuento" type="integer" column="descuento"/>
-    <field name="fecha_incial" type="datetime" column="fecha_incial"/>
-    <field name="fecha_final" type="datetime" column="fecha_final"/>
-    <field name="created_at" type="datetime" column="created_at"/>
-    <field name="updated_at" type="datetime" column="updated_at"/>
+    <field name="cantidad" type="integer" column="cantidad" nullable="true"/>
+    <field name="descuento" type="integer" column="descuento" nullable="true"/>
+    <field name="fecha_incial" type="datetime" column="fecha_incial" nullable="true"/>
+    <field name="fecha_final" type="datetime" column="fecha_final" nullable="true"/>
+    <field name="created_at" type="datetime" column="created_at" nullable="true"/>
+    <options>
+      <option name="default">CURRENT_TIMESTAMP</option>
+    </options>
+    <field name="updated_at" type="datetime" column="updated_at" nullable="true"/>
   </entity>
 </doctrine-mapping>

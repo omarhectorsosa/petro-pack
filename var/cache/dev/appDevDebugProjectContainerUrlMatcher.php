@@ -106,15 +106,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         if (0 === strpos($pathinfo, '/backend')) {
-            // petropack_paginado_default_index
-            if (rtrim($pathinfo, '/') === '/backend') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'petropack_paginado_default_index');
-                }
-
-                return array (  '_controller' => 'PetroPack\\PaginadoBundle\\Controller\\DefaultController::indexAction',  '_route' => 'petropack_paginado_default_index',);
-            }
-
             // petropack_paginado_paginado_showsection
             if (0 === strpos($pathinfo, '/backend/paginado/class') && preg_match('#^/backend/paginado/class/(?P<class>[^/]++)/section/(?P<section>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_paginado_paginado_showsection')), array (  '_controller' => 'PetroPack\\PaginadoBundle\\Controller\\PaginadoController::showSectionAction',));
@@ -181,11 +172,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // petropack_venta_venta_new
-            if (rtrim($pathinfo, '/') === '/backend') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'petropack_venta_venta_new');
-                }
-
+            if ($pathinfo === '/backend/new') {
                 return array (  '_controller' => 'PetroPack\\VentaBundle\\Controller\\VentaController::newAction',  '_route' => 'petropack_venta_venta_new',);
             }
 
@@ -252,6 +239,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_producto_producto_getlist')), array (  '_controller' => 'PetroPack\\ProductoBundle\\Controller\\ProductoController::getListAction',));
                 }
 
+                // petropack_producto_producto_getpaginadosection
+                if (0 === strpos($pathinfo, '/backend/producto/paginado/section') && preg_match('#^/backend/producto/paginado/section/(?P<section>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_producto_producto_getpaginadosection')), array (  '_controller' => 'PetroPack\\ProductoBundle\\Controller\\ProductoController::getPaginadoSectionAction',));
+                }
+
                 if (0 === strpos($pathinfo, '/backend/producto/a')) {
                     // petropack_producto_producto_getall
                     if ($pathinfo === '/backend/producto/all') {
@@ -283,32 +275,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 // petropack_producto_producto_remove
                 if (preg_match('#^/backend/producto/(?P<producto_id>[^/]++)/imagen/remove/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_producto_producto_remove')), array (  '_controller' => 'PetroPack\\ProductoBundle\\Controller\\ProductoController::removeAction',));
-                }
-
-            }
-
-            if (0 === strpos($pathinfo, '/backend/c')) {
-                // petropack_customer_customer_getall
-                if ($pathinfo === '/backend/cliente') {
-                    return array (  '_controller' => 'PetroPack\\CustomerBundle\\Controller\\CustomerController::getAllAction',  '_route' => 'petropack_customer_customer_getall',);
-                }
-
-                if (0 === strpos($pathinfo, '/backend/customer')) {
-                    // petropack_customer_customer_create
-                    if (0 === strpos($pathinfo, '/backend/customer/create/nombre') && preg_match('#^/backend/customer/create/nombre/(?P<nombre>[^/]++)/direccion/(?P<direccion>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_customer_customer_create')), array (  '_controller' => 'PetroPack\\CustomerBundle\\Controller\\CustomerController::createAction',));
-                    }
-
-                    // petropack_customer_customer_show
-                    if (0 === strpos($pathinfo, '/backend/customer/show') && preg_match('#^/backend/customer/show/(?P<clienteId>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_customer_customer_show')), array (  '_controller' => 'PetroPack\\CustomerBundle\\Controller\\CustomerController::showAction',));
-                    }
-
-                    // petropack_customer_customer_update
-                    if (0 === strpos($pathinfo, '/backend/customer/update/cliente') && preg_match('#^/backend/customer/update/cliente/(?P<clienteId>[^/]++)/nombre/(?P<nombre>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'petropack_customer_customer_update')), array (  '_controller' => 'PetroPack\\CustomerBundle\\Controller\\CustomerController::updateAction',));
-                    }
-
                 }
 
             }

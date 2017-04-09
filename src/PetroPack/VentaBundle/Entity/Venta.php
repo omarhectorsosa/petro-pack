@@ -46,7 +46,15 @@ class Venta
      * @var float
      */
     private $pago;
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
 
+    /**
+     * @var \DateTime
+     */
+    private $updated_at;
 
     /**
      * Get id
@@ -224,6 +232,30 @@ class Venta
     public function getPago()
     {
         return $this->pago;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return DescuentoProducto
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
     }
 }
 
