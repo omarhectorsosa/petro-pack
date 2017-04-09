@@ -40,12 +40,12 @@ class ItemVenta
     /**
      * @var \DateTime
      */
-    private $create_at;
+    private $created_at;
 
     /**
      * @var \DateTime
      */
-    private $update_at;
+    private $updated_at;
 
 
     /**
@@ -185,7 +185,7 @@ class ItemVenta
      *
      * @return ItemVenta
      */
-    public function setCreateAt($createAt)
+    public function setCreatedAt($createAt)
     {
         $this->create_at = $createAt;
 
@@ -197,7 +197,7 @@ class ItemVenta
      *
      * @return \DateTime
      */
-    public function getCreateAt()
+    public function getCreatedAt()
     {
         return $this->create_at;
     }
@@ -209,7 +209,7 @@ class ItemVenta
      *
      * @return ItemVenta
      */
-    public function setUpdateAt($updateAt)
+    public function setUpdatedAt($updateAt)
     {
         $this->update_at = $updateAt;
 
@@ -221,7 +221,7 @@ class ItemVenta
      *
      * @return \DateTime
      */
-    public function getUpdateAt()
+    public function getUpdatedAt()
     {
         return $this->update_at;
     }

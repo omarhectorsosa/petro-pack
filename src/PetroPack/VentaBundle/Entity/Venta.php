@@ -46,6 +46,7 @@ class Venta
      * @var float
      */
     private $pago;
+
     /**
      * @var \DateTime
      */
@@ -235,6 +236,30 @@ class Venta
     }
 
     /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return DescuentoProducto
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
@@ -257,5 +282,7 @@ class Venta
     {
         return $this->updated_at;
     }
+
+
 }
 

@@ -23,6 +23,26 @@ class Cliente
     private $direccion;
 
     /**
+     * @var string
+     */
+    private $email;
+
+    /**
+     * @var integer
+     */
+    private $dni;
+
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
+
+    /**
+     * @var \DateTime
+     */
+    private $updated_at;
+
+    /**
      * Get id
      *
      * @return int
@@ -79,30 +99,6 @@ class Cliente
     {
         return $this->direccion;
     }
-    /**
-     * @var string
-     */
-    private $email;
-
-    /**
-     * @var integer
-     */
-    private $dni;
-
-    /**
-     * @var float
-     */
-    private $pago;
-    /**
-     * @var \DateTime
-     */
-    private $created_at;
-
-    /**
-     * @var \DateTime
-     */
-    private $updated_at;
-
 
     /**
      * Set email
@@ -153,6 +149,30 @@ class Cliente
     }
 
     /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return DescuentoProducto
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
@@ -175,4 +195,5 @@ class Cliente
     {
         return $this->updated_at;
     }
+
 }

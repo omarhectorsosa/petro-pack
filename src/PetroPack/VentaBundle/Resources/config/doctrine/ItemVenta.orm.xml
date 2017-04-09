@@ -9,10 +9,11 @@
     <field name="producto_id" type="integer" column="producto_id" nullable="true"/>
     <field name="precio_final" type="float" column="precio_final" nullable="true"/>
     <field name="descuento" type="integer" column="descuento" nullable="true"/>
-    <field name="create_at" type="datetime" column="create_at" nullable="true"/>
-    <options>
-      <option name="default">CURRENT_TIMESTAMP</option>
-    </options>
-    <field name="update_at" type="datetime" column="update_at" nullable="true"/>
+    <field name="created_at" type="datetime" column="created_at" nullable="false">
+      <options>
+        <option name="default">CURRENT_TIMESTAMP</option>
+      </options>
+    </field>
+    <field name="updated_at" type="datetime" column="updated_at" nullable="true"/>
   </entity>
 </doctrine-mapping>
